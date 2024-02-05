@@ -23,7 +23,7 @@ public class SignsDAO {
     
     /* Gets number of top signs specified */
     /* we are gonna fake this one */
-    public ArrayList<sign> getAllSigns(int numsigns){
+    public ArrayList<Sign> getAllSigns(int numsigns){
         
         
         DBManager dm = new DBManager();
@@ -35,7 +35,7 @@ public class SignsDAO {
         String imageLocation = null;
         String category = null;
 
-        ArrayList<sign> signData = new ArrayList();
+        ArrayList<Sign> signData = new ArrayList();
 
         String query = "SELECT * FROM SIGNS";
         try {
