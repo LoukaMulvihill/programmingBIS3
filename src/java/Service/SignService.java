@@ -14,7 +14,7 @@ import Models.Sign;
  */
 public class SignService {
     
-    public ArrayList<Sign> getHomePageProducts(){
+    public ArrayList<Sign> getAllSigns(){
         
         SignsDAO pDao = new SignsDAO();
         return pDao.getAllSigns(6);

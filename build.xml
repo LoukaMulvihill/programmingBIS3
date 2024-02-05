@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="Project_Phase_1_2023-v2.0_(Copy)" default="default" basedir=".">
-    <description>Builds, tests, and runs the project Project_Phase_1_2023-v2.0 (Copy).</description>
+<project name="Advanced_Programming_Phase_2" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Advanced Programming Phase 2.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
