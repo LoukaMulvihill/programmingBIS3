@@ -23,11 +23,15 @@ public class SignService {
      * Fetches all signs from the database.
      * Optionally, a limit can be specified to control the number of signs returned.
      * 
-     * @param limit The maximum number of signs to retrieve. If less than 1, all signs are retrieved.
+     
      * @return A list of signs.
      */
-    public ArrayList<Sign> getAllSigns(int limit) {
-        return signsDAO.getAllSigns(limit > 0 ? limit : Integer.MAX_VALUE);
+    public ArrayList<Sign> getAllSigns()  {
+        ArrayList<Sign> signs = new ArrayList<>();
+        // Example logic to fetch all signs from the database
+        // String query = "SELECT * FROM signs";
+        // Execute query and populate 'signs' list
+        return signs;
     }
 
     /**

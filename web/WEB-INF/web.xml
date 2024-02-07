@@ -4,15 +4,41 @@
 	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	 version="3.1">
+  <servlet>
+        <servlet-name>HomePageServlet</servlet-name>
+        <servlet-class>Controllers.HomePageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>Controllers.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DBCreationRunner</servlet-name>
+        <servlet-class>utils.DBCreationRunner</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>adminServlet</servlet-name>
+        <servlet-class>Controllers.adminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomePageServlet</servlet-name>
+        <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adminServlet</servlet-name>
+        <url-pattern>/userAdmin</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-      
     <welcome-file-list>
-        <welcome-file>
-            Homepage.jsp
-        </welcome-file>
+        <welcome-file>Homepage.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
