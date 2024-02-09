@@ -14,12 +14,14 @@ public class User {
     private String username;
     private String password;
     private String userType;
+    private String email;
 
-    public User(int userID, String username, String password, String userType) {
+    public User(int userID, String username, String password, String userType, String email) {
         this.userID = userID;
         this.username = username;
         this.password = password;
         this.userType = userType;
+        this.email = email;
     }
 
     public String getPassword() {
@@ -52,6 +54,14 @@ public class User {
 
     public void setUserType(String userType) {
         this.userType = userType;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 }
