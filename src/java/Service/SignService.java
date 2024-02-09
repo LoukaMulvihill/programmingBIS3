@@ -13,7 +13,7 @@ import Models.Sign;
  */
 public class SignService {
     
-    private SignsDAO signsDAO;
+    private final SignsDAO signsDAO;
 
     public SignService() {
         this.signsDAO = new SignsDAO();
@@ -37,11 +37,11 @@ public class SignService {
     /**
      * Retrieves a sign by its ID.
      * 
-     * @param signID The ID of the sign to retrieve.
+     * @param signId The Id of the sign to retrieve.
      * @return The sign with the specified ID, or null if not found.
      */
-    public Sign getSignByID(int signID) {
+    public Sign getSignByID(int signId) {
         // Assuming there's a method in SignsDAO for fetching a sign by its ID
-        return signsDAO.getSignByID(signID); 
+        return signsDAO.getSignById(signId); 
     }
 } 
