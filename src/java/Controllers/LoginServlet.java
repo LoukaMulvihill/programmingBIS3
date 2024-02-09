@@ -93,7 +93,7 @@ public class LoginServlet extends HttpServlet {
             } else {
                 request.getSession(true).setAttribute(IConstants.SESSION_KEY_USER, user);
                 if (user.getUserType().equals(IConstants.USER_TYPE_ADMIN)) {
-                    RequestDispatcher rd = request.getRequestDispatcher("/adminhomepage.jsp");
+                    RequestDispatcher rd = request.getRequestDispatcher("/AdminPage.jsp");
                     rd.forward(request, response);
                 } else if (user.getUserType().equals(IConstants.USER_TYPE_GENERAL)) {
                     RequestDispatcher rd = request.getRequestDispatcher("/Home");

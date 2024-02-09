@@ -13,7 +13,7 @@
 
         for (User user : users) {
     %>
-        <form action="AdminPageServlet" method="post">
+        <form action="adminServlet" method="post">
             <input type="hidden" name="userID" value="<%= user.getUserID() %>">
             <p>ID: <%= user.getUserID() %>, Username: <%= user.getUsername() %>, UserType: <%= user.getUserType() %></p>
             
