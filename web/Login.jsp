@@ -23,7 +23,7 @@
         %>
         <div class="center">
             <h1>Login</h1>
-            <form action =" LoginServlet" method="post">
+            <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
                 <div class="txt_field">
                     <input type="text" name="username"  >
                     <label>Username</label>
