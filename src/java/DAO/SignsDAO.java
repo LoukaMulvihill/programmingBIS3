@@ -51,8 +51,8 @@ public class SignsDAO {
                 price = (rs.getFloat(4));
                 imageLocation = (rs.getString(5));
                 category = (rs.getString(6));
-                sign sign = new sign();
-                sign.setId(signId);
+                Sign sign = new Sign();
+                sign.setSignID(signId);
                 sign.setName(name);
                 sign.setDescription(description);
                 sign.setPrice(price);

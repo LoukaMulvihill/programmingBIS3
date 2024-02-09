@@ -19,8 +19,10 @@ public class Sign {
     private String price;
     private String thickness;
     private String fixing_method;
+    private String category;
+    private String imageLocation;
 
-    public Sign(int signID, String name, String description, String reflective, String size, String image, String price, String thickness, String fixing_method) {
+    public Sign(int signID, String name, String description, String reflective, String size, String image, String price, String thickness, String fixing_method, String category, String imageLocation) {
         this.signID = signID;
         this.name = name;
         this.description = description;
@@ -30,6 +32,8 @@ public class Sign {
         this.price = price;
         this.thickness = thickness;
         this.fixing_method = fixing_method;
+        this.category = category;
+        this.imageLocation = imageLocation;
     }
   
     public Sign() {
@@ -106,6 +110,22 @@ public class Sign {
     
     public void setFixing_method(String fixing_method) {
         this.fixing_method = fixing_method;
+    }
+    
+    public String getCategory() {
+        return category;
+    }
+    
+    public void setCategory(String category) {
+        this.category = category;
+    }
+    
+    public String getImageLocation() {
+        return imageLocation;
+    }
+
+     public void setImageLocation(String imageLocation) {
+        this.imageLocation = imageLocation;
     }
 }
 
