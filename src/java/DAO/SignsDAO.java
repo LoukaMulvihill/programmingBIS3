@@ -31,7 +31,7 @@ public class SignsDAO {
         int signId = 0;
         String name = null;
         String description = null;
-        float price = 0.0f;
+        String price = null;
         String imageLocation = null;
         String category = null;
 
@@ -48,7 +48,7 @@ public class SignsDAO {
                 signId = (rs.getInt(1));
                 name = (rs.getString(2));
                 description = (rs.getString(3));
-                price = (rs.getFloat(4));
+                price = (rs.getString(4));
                 imageLocation = (rs.getString(5));
                 category = (rs.getString(6));
                 Sign sign = new Sign();
