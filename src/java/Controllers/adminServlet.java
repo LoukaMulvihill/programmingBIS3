@@ -121,7 +121,7 @@ public class adminServlet extends HttpServlet {
     
     private void updateUser(HttpServletRequest request, HttpServletResponse response){
         
-        long id = Long.parseLong(request.getParameter("id"));
+        long ID = Long.parseLong(request.getParameter("id"));
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String firstName = request.getParameter("firstName");
@@ -129,7 +129,7 @@ public class adminServlet extends HttpServlet {
         String userType = request.getParameter("userType");
         
         User newUser = new User();
-        newUser.setId(id);
+        newUser.setUserID(userID);
         newUser.setEmail(email);
         newUser.setPassword(password);
         newUser.setFirstName(firstName);
