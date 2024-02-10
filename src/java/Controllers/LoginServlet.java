@@ -80,7 +80,7 @@ public class LoginServlet extends HttpServlet {
         
         if (StringUtils.isStringEmpty(email) || StringUtils.isStringEmpty(password)) {
 
-            RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+            RequestDispatcher rd = request.getRequestDispatcher("/Login.jsp");
             rd.forward(request, response);
 
         } else {
