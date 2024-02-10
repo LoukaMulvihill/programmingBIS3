@@ -52,7 +52,7 @@ public class UserDAO {
         }
 
         tempUser.setEmail(email);
-        tempUser.setId(userId);
+        tempUser.setUserID(userId);
         tempUser.setFirstName(fName);
         tempUser.setLastName(lName);
         tempUser.setPassword(password);
@@ -87,7 +87,7 @@ public class UserDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        tempUser.setId(userId);
+        tempUser.setUserID(userId);
         tempUser.setEmail(email);
         tempUser.setFirstName(fName);
         tempUser.setLastName(lName);
@@ -122,7 +122,7 @@ public class UserDAO {
                 userType = (rs.getString(6));
                 User tempUser = new User();
                 tempUser.setEmail(email);
-                tempUser.setId(userId);
+                tempUser.setUserID(userId);
                 tempUser.setFirstName(fName);
                 tempUser.setLastName(lName);
                 tempUser.setPassword(password);
@@ -174,7 +174,7 @@ public class UserDAO {
         try {
         
             stmt = con.createStatement();
-            String sql = String.format("UPDATE USERDATA SET email='%s',password='%s',fname='%s',lname='%s',usertype='%s' where user_id=%d ",newUser.getEmail(),newUser.getPassword(),newUser.getFirstName(),newUser.getLastName(),newUser.getUserType(),newUser.getId());
+            String sql = String.format("UPDATE USERDATA SET email='%s',password='%s',fname='%s',lname='%s',usertype='%s' where user_id=%d ",newUser.getEmail(),newUser.getPassword(),newUser.getFirstName(),newUser.getLastName(),newUser.getUserType(),newUser.getUserID());
             stmt.executeUpdate(sql);
         }
         catch (SQLException e){
