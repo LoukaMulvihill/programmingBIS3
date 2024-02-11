@@ -96,6 +96,7 @@ public class SetupDB {
                 // Execute statement
                 currentStatement = conn.createStatement();
                 currentStatement.execute(rawStatement);
+                System.out.println(rawStatement);
             } catch (SQLException e) {
                 logger.log(Level.SEVERE, null, e);
             } finally {
@@ -104,7 +105,7 @@ public class SetupDB {
                     try {
                         currentStatement.close();
                     } catch (SQLException e) {
-                        logger.log(Level.SEVERE, null, e);;
+                        logger.log(Level.SEVERE, null, e);
                     }
                 }
                 currentStatement = null;

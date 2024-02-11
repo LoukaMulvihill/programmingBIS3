@@ -78,9 +78,11 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         
+        System.out.println("\n\n\n EMAIL: " + email + "\nPASSWORD: " + password + "\n\n\n");
+        
         if (StringUtils.isStringEmpty(email) || StringUtils.isStringEmpty(password)) {
 
-            RequestDispatcher rd = request.getRequestDispatcher("/Login.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/Homepage.jsp");
             rd.forward(request, response);
 
         } else {
@@ -88,9 +90,11 @@ public class LoginServlet extends HttpServlet {
             UserService uServ = new UserService();
             User user = uServ.loginUser(email, password);
             if (user == null) {
-                RequestDispatcher rd = request.getRequestDispatcher("/Home");
+                RequestDispatcher rd = request.getRequestDispatcher("/Homepage.jsp");
+                System.out.println("\n\n\nUSER IS NULL\n\n\n");
                 rd.forward(request, response);
             } else {
+                System.out.println("\n\n\nTHE USER EXISTS: " + user.getFirstName() + "\n\n\n");
                 request.getSession(true).setAttribute(IConstants.SESSION_KEY_USER, user);
                 if (user.getUserType().equals(IConstants.USER_TYPE_ADMIN)) {
                     RequestDispatcher rd = request.getRequestDispatcher("/AdminPage.jsp");

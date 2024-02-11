@@ -41,4 +41,3 @@ VALUES('Overconfidence','This is going to end in disaster',5.67,'overconfidence.
 
 INSERT INTO PRODUCTS(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY)
 VALUES('Potential','Not Everybody gets to be an astronaut',5.67,'potential.jpg','Funny');
-

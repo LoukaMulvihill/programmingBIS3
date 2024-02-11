@@ -25,7 +25,7 @@
             <h1>Login</h1>
             <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
                 <div class="txt_field">
-                    <input type="text" name="username"  >
+                    <input type="text" name="email"  >
                     <label>Username</label>
                 </div>
                 <div class="txt_field">

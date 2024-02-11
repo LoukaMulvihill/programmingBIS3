@@ -61,7 +61,7 @@ public class UserDAO {
 
     }
     
-    public User getUserById(long userId) {
+    public User getUserById(int userId) {
 
         DBManager dmbgr = new DBManager();
         Connection con = dmbgr.getConnection();

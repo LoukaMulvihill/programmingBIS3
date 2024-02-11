@@ -5,8 +5,10 @@
 package utils;
 
 import java.sql.Connection;
+import org.apache.derby.jdbc.ClientDriver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -34,12 +36,19 @@ public class DBManager {
 
 
         Connection dbConnection = null;
+        ClientDriver derbyClient = new ClientDriver();
+        Properties props = new Properties();
+        
         //String strUrl = "jdbc:derby:bills-product-db;create=true";
         String strUrl = "jdbc:derby://localhost:1527/database6692;create=true";
         try {
-            dbConnection = DriverManager.getConnection(strUrl,"dbadmin","dbpassword");
+            dbConnection = derbyClient.connect(strUrl,props);
         } catch (SQLException sqle) {
             logger.log(Level.SEVERE, null, sqle.getStackTrace());
+        }
+        
+        if (dbConnection != null) {
+            System.out.println("CONNECTION ACQUIRED!!");
         }
 
         return dbConnection;
