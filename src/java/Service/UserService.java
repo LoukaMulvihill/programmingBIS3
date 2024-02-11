@@ -26,7 +26,7 @@ public class UserService {
         else return null;
     }
     
-    public User getUser(long userId){
+    public User getUser(int userId){
         UserDAO userDAO = new UserDAO();
         User user = userDAO.getUserById(userId);
         return user;

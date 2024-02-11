@@ -68,7 +68,7 @@ public class adminServlet extends HttpServlet {
             if (userId == null)
                 request.getRequestDispatcher("/Home").forward(request, response);
             else {
-                long uId = Long.parseLong(userId);
+                int uId = Integer.parseInt(userId);
                 uServ = new UserService();
                 User oldUser = uServ.getUser(uId);
                 request.setAttribute("oldUser", oldUser);
@@ -121,7 +121,7 @@ public class adminServlet extends HttpServlet {
     
     private void updateUser(HttpServletRequest request, HttpServletResponse response){
         
-        long ID = Long.parseLong(request.getParameter("id"));
+        int ID = Integer.parseInt(request.getParameter("id"));
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String firstName = request.getParameter("firstName");
@@ -129,7 +129,7 @@ public class adminServlet extends HttpServlet {
         String userType = request.getParameter("userType");
         
         User newUser = new User();
-        newUser.setUserID(userID);
+        newUser.setUserID(ID);
         newUser.setEmail(email);
         newUser.setPassword(password);
         newUser.setFirstName(firstName);
@@ -145,11 +145,9 @@ public class adminServlet extends HttpServlet {
     
     private void deleteUser(HttpServletRequest request, HttpServletResponse response){
         
-        long userId = Long.parseLong(request.getParameter("id"));
+        int ID = Integer.parseInt(request.getParameter("id"));
         UserService uServ = new UserService();
-        uServ.deleteUser(userId);
-        return;
-    
+        uServ.deleteUser(ID);    
     }
 
     /**
