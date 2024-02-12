@@ -13,13 +13,12 @@
 
         for (User user : users) {
     %>
-        <form action="adminServlet" method="post">
+        <form action="userAdmin" method="post">
             <input type="hidden" name="userID" value="<%= user.getUserID() %>">
-            <p>ID: <%= user.getUserID() %>,NAME: <%= user.getFirstName() %> <%= user.getLastName() %>, EMAIL: <%= user.getEmail() %>, USERTYPE: <%= user.getUserType() %></p>
+            <p>ID: <%= user.getUserID() %>,NAME: <%= user.getFirstName() %> <%= user.getLastName() %>, EMAIL: <%= user.getEmail() %>, USER TYPE: <%= user.getUserType() %></p>
              <!-- Buttons for Delete and Edit actions -->
             <button type="submit" name="action" value="delete" style="margin-left: 10px;">Delete</button>
             <button type="submit" name="action" value="edit" style="margin-left: 5px;">Edit</button>
-
         </form>
             <hr>
     <%

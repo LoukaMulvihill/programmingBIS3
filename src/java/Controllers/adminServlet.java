@@ -66,7 +66,7 @@ public class adminServlet extends HttpServlet {
         if (action.equals("edit")){
             String userId = request.getParameter("id");
             if (userId == null)
-                request.getRequestDispatcher("/Home").forward(request, response);
+                request.getRequestDispatcher("/editUser.jsp").forward(request, response);
             else {
                 int uId = Integer.parseInt(userId);
                 uServ = new UserService();
