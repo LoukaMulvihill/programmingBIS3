@@ -28,7 +28,7 @@ public class SignsDAO {
         
         DBManager dm = new DBManager();
         Connection con = dm.getConnection();
-        int signId = 0;
+        int productId = 0;
         String name = null;
         String description = null;
         String price = null;
@@ -37,7 +37,7 @@ public class SignsDAO {
 
         ArrayList<Sign> signData = new ArrayList();
 
-        String query = "SELECT * FROM SIGNS";
+        String query = "SELECT * FROM APP.SIGNS";
         try {
             PreparedStatement stmt = con.prepareStatement(query);
             ResultSet rs = stmt.executeQuery();
@@ -45,14 +45,14 @@ public class SignsDAO {
             while (rs.next()) {
                 if (signCount >= numsigns)
                     break;
-                signId = (rs.getInt(1));
+                productId = (rs.getInt(1));
                 name = (rs.getString(2));
                 description = (rs.getString(3));
                 price = (rs.getString(4));
                 imageLocation = (rs.getString(5));
                 category = (rs.getString(6));
                 Sign sign = new Sign();
-                sign.setSignID(signId);
+                sign.setproductId(productId);
                 sign.setName(name);
                 sign.setDescription(description);
                 sign.setPrice(price);
@@ -73,7 +73,7 @@ public class SignsDAO {
         
     }
 
-    public Sign getSignById(int signId) {
+    public Sign getSignById(int productId) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     

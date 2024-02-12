@@ -27,21 +27,21 @@ public class SignService {
      * @return A list of signs.
      */
     public ArrayList<Sign> getAllSigns()  {
-        ArrayList<Sign> signs = new ArrayList<>();
+        ArrayList<Sign> signs =  new ArrayList<>();
         // Example logic to fetch all signs from the database
-        // String query = "SELECT * FROM signs";
+        //String query = "SELECT * FROM SIGNS";
         // Execute query and populate 'signs' list
-        return signs;
+        return signsDAO.getAllSigns(Integer.MAX_VALUE);
     }
 
     /**
      * Retrieves a sign by its ID.
      * 
-     * @param signId The Id of the sign to retrieve.
+     * @param productId The Id of the sign to retrieve.
      * @return The sign with the specified ID, or null if not found.
      */
-    public Sign getSignByID(int signId) {
+    public Sign getSignByID(int productId) {
         // Assuming there's a method in SignsDAO for fetching a sign by its ID
-        return signsDAO.getSignById(signId); 
+        return signsDAO.getSignById(productId); 
     }
 } 

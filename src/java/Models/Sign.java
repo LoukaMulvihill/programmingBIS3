@@ -10,7 +10,7 @@ package Models;
  */
 public class Sign {
     
-    private int signID;
+    private int productId;
     private String name;
     private String description;
     private String reflective;
@@ -22,8 +22,8 @@ public class Sign {
     private String category;
     private String imageLocation;
 
-    public Sign(int signID, String name, String description, String reflective, String size, String image, String price, String thickness, String fixing_method, String category, String imageLocation) {
-        this.signID = signID;
+    public Sign(int productId, String name, String description, String reflective, String size, String image, String price, String thickness, String fixing_method, String category, String imageLocation) {
+        this.productId = productId;
         this.name = name;
         this.description = description;
         this.reflective = reflective;
@@ -40,12 +40,12 @@ public class Sign {
         
     }
 
-    public int getSignID() {
-        return signID;
+    public int getproductId() {
+        return productId;
     }
 
-    public void setSignID(int signID) {
-        this.signID = signID;
+    public void setproductId(int productId) {
+        this.productId = productId;
     }
 
     public String getName() {

@@ -18,6 +18,15 @@
        
     <%
         ArrayList<Sign> signList = (ArrayList) request.getAttribute("signList");
+        for (Sign sign : signList) {
+    %>
+        <div>
+            <h3><%= sign.getName() %></h3>
+            <p>Price: <%= sign.getPrice() %></p>
+            <p>Description: <%= sign.getDescription() %></p>
+        </div>
+    <%
+        }
     %>
 
     <header>
@@ -63,7 +72,7 @@
 
         <div class="album py-5 bg-dark text-light">
             <div class="container">
-                <!-- gonna do a for loop here to show all our movies -->
+                <!-- gonna do a for loop here to show all the signs -->
                 <div class="row">
                     <%
                         for (Sign sign : signList) {
@@ -72,12 +81,12 @@
                         <div class="card mb-4 box-shadow bg-secondary">
                             <img class="card-img-top" src="Images/<%= sign.getImage()%>" alt="Card image cap" width="300" height="350">
                             <div class="card-body">
-                                <p class="card-text"><%= sign.getSignID()%></p>
+                                <p class="card-text"><%= sign.getproductId()%></p>
                                 <h1 class="card-text"><%= sign.getName()%></h1>
                                 <p class="card-text"><%= sign.getDescription()%></p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                       <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="SingleSignServlet?signID=<%= sign.getSignID()%>">View Sign</a></div>
+                                       <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="SingleSignServlet?productId=<%= sign.getproductId()%>">View Sign</a></div>
                                     </div>
                                     <small class="text-muted">Colour: <%= sign.getReflective()%></small>
                                 </div>
