@@ -40,7 +40,19 @@
                                         <c:param name="action" value="updateCompleteUser"/>
                                     </c:url>
 
-                        <form action="${updateUserUrl}" method="POST">
+                        <form action="userAdmin" method="POST">
+                            <input id="id" name="id" type="hidden" value="${oldUser.id}">
+                                <!-- Email, password, first name, last name fields -->
+                                <div class="form-group row">
+                                    <label>USER Type:</label>
+                                    <select name="userType">
+                                        <option value="Administrator" ${oldUser.userType eq 'Administrator' ? 'selected' : ''}>Administrator</option>
+                                        <option value="General User" ${oldUser.userType eq 'General User' ? 'selected' : ''}>General User</option>
+                                    </select>
+                                </div>
+                            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+                        </form> 
+                                    <form action="${updateUserUrl}" method="POST">
                             <input id="id" name="id" type="hidden" value="${oldUser.id}">
                             <div class="form-group row">
                                 <label for="email" class="col-4 col-form-label">Email</label> 
@@ -66,25 +78,6 @@
                                     <input id="lastName" name="lastName" type="text" value="${oldUser.lastName}" class="form-control" required="required">
                                 </div>
                             </div>
-                            <div class="form-group row"> 
-                                <div class="col-8">
-                                    <form action="adminServlet" method="post">
-                                        <label>USER Type:</label>
-                                            <select name="reportType">
-                                                <option value="userActivity">Administrator</option>
-                                                <option value="salesReport">General User</option>
-                                            </select>
-                                    </form>
-                                    
-                                    
-                                </div>
-                            </div> 
-                            <div class="form-group row">
-                                <div class="offset-4 col-8">
-                                    <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </div>
-                        </form> 
                                 
                     </div>
                     <!-- /.row -->
