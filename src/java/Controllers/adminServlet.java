@@ -59,9 +59,9 @@ public class adminServlet extends HttpServlet {
         }
         if (action.equals("updateCompleteUser")){
             updateUser(request,response);
-            ArrayList<User> users = uServ.getAllUsers();
+            ArrayList<User> users = new UserService().getAllUsers();
             request.setAttribute("users", users);
-            request.getRequestDispatcher("/userAdmin.jsp").forward(request, response);
+            request.getRequestDispatcher("/LoginServlet").forward(request, response);
         }
         if (action.equals("edit")){
             String userId = request.getParameter("id");

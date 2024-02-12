@@ -1,10 +1,6 @@
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="Models.User" %>
-<%@ page import="DAO.UserDAO" %>
-<%@ page import="java.util.Iterator" %>
-
-<%-- Your existing code --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="Models.User"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 
     <head>
@@ -14,14 +10,13 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Administrator Home Page</title>
+        <title>Mighty Posters</title>
 
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="css/shop-homepage.css" rel="stylesheet">
-
 
     </head>
 
@@ -30,7 +25,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#">Posters</a>
+                <a class="navbar-brand" href="#">Lets Buy Posters!</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -61,38 +56,75 @@
                 </div>
             </div>
         </nav>
-
+<div class="col-lg-12">
+            <br/>
+        </div>
         <!-- Page Content -->
-        <div class="container">
+        <div class="container bg-light">
 
             <div class="row">
 
-                <div class="col-lg-3">
+                <div class="col-lg-12">
 
-                    <h1 class="my-4">Posters !!</h1>
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">Product Administration</a>
-                        <a href="userAdmin?action=listUsers" class="list-group-item">User Administration</a>
-                    </div>
+                    <h1 class="my-4">User Administration</h1>
 
-                </div>
-                <!-- /.col-lg-3 -->
-
-                <div class="col-lg-9">
 
 
                     <div class="row">
 
-                        <h1 class="pt-4"> Administration Home </h3>    
-                    </div>
-                    <div class="row">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="${users}" var="user">
+                                    <c:url value="/userAdmin" var="editUserUrl">
+                                        <c:param name="action" value="edit"/>
+                                        <c:param name="id" value="${user.id}"/>
+                                    </c:url>
+                                    <c:url value="/userAdmin" var="deleteUserUrl">
+                                        <c:param name="action" value="delete"/>
+                                        <c:param name="id" value="${user.id}"/>
+                                    </c:url>
+                                <tr>
+                                    <td scope="row">${user.id}</th>
+                                    <td>${user.firstName}</td>
+                                    <td>${user.lastName}</td>
+                                    <td>${user.email}</td>
+                                    <td><a href="${editUserUrl}"> Edit</a> <a href="${deleteUserUrl}">Delete</a></td>
+                                </tr>
+                                </c:forEach>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <c:url value="/userAdmin" var="addUserUrl">
+                                        <c:param name="action" value="add"/>
+                                    </c:url>
+                                    <td><a href="${addUserUrl}" > Add </a></td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>      
 
-                        <br>    
-                    </div>
-                    <div class="row">
 
-    
-                    </div><!-- comment -->
+
+
+
+
+
+
+
+
+
+                    </div>
                     <!-- /.row -->
 
                 </div>
@@ -103,7 +135,9 @@
 
         </div>
         <!-- /.container -->
-
+        <div class="col-lg-12">
+            <br/>
+        </div>
         <!-- Footer -->
         <footer class="py-5 bg-dark">
             <div class="container">
@@ -119,4 +153,3 @@
     </body>
 
 </html>
-
