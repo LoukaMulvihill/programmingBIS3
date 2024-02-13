@@ -25,7 +25,7 @@ INSERT INTO USERDATA(EMAIL,PASSWORD,FNAME,LNAME,USERTYPE)
 VALUES('user5@user.com', 'mypassword', 'Mary', 'User','GENUSER');
 
 INSERT INTO PRODUCTS(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY)
-VALUES('Big Optimism','The Very Big Prelude to Dissapointment',5.67,'Left Turn.jpg','Humour');
+VALUES('Big Optimism','The Very Big Prelude to Dissapointment',5.67,'optimism.jpg','Humour');
 
 INSERT INTO PRODUCTS(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY)
 VALUES('Lazy','Just because you have to doesnt mean you need to',5.67,'lazy.jpg','Humour');
